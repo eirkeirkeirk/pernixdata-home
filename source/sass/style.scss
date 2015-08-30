@@ -24,130 +24,148 @@ $image-path: "../images/";
   font-weight: 600;
   div {
     vertical-align: top;
-    overflow: visible;
   }
-  .hypervisor {
-    position: relative;
-    margin-left: 100px;
-    margin-top: 70px;
-    @include setimg("background", 341, 196);
-    .hotspot {
+  .left {
+//    position: relative;
+    display: inline-block;
+    .hypervisor {
       position: relative;
-      font-size: 25pt;
-      font-weight: 600;
-      text-align: center;
-      &.top {
-        left: 6px;
-        top: 8px;
-        width: 329px;
-        height: 85px;
-        &.selected {
-          @include setimg("scribble-1", 329, 85);
-          color: white;
+      margin-left: 100px;
+      margin-top: 70px;
+      @include setimg("background", 341, 196);
+      .hotspot {
+        position: relative;
+        font-size: 25pt;
+        font-weight: 600;
+        text-align: center;
+        &.top {
+          left: 6px;
+          top: 8px;
+          width: 329px;
+          height: 85px;
+          &.selected {
+            @include setimg("scribble-1", 329, 85);
+            color: white;
+          }
+          p {
+            padding-top: 30px;
+          }
         }
-        p {
-          padding-top: 30px;
+        &.bottom {
+          left: 4px;
+          top: 14px;
+          width: 332px;
+          height: 89px;
+          &.selected {
+            @include setimg("scribble-2", 332, 89);
+            color: white;
+          }
+          p {
+            padding-top: 25px;
+          }
         }
       }
-      &.bottom {
-        left: 4px;
-        top: 14px;
-        width: 332px;
-        height: 89px;
-        &.selected {
-          @include setimg("scribble-2", 332, 89);
-          color: white;
+      .vms {
+        position: absolute;
+        left: 19px;
+        top: -17px;
+        .vm {
+          display: inline-block;
+          @include setimg("vm", 33, 37);
+          color: $gray;
+          &.second {
+            margin-right: 36px;
+            margin-left: 6px;
+          }
+          &.last {
+            margin-left: 6px;
+            margin-right: 0px;
+          }
+          p {
+            margin-top: 14px;
+            font-size: 10px;
+            width: 100%;
+            text-align: center;
+          }
         }
-        p {
-          padding-top: 25px;
+      }
+      .label {
+        @include setimg("hypervisor", 86, 30);
+        position: absolute;
+        left: 125px;
+        bottom: -11px;
+      }
+    }
+    .servers {
+      margin-top: 30px;
+      margin-left: 10px;
+      .server {
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 20px;
+        .rack {
+          @include setimg("rack-server", 148, 35);
+        }
+        .storage {
+          margin-top: 13px;
+          margin-left: 10px;
+          .ram {
+            @include setimg("ram", 32, 12);
+            display: inline-block;
+            margin-top: 10px;
+          }
+          .pci {
+            @include setimg("pci", 43, 33);
+            display: inline-block;
+            margin-left: 10px;
+          }
+          .ssd {
+            @include setimg("ssd", 26, 19);
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 6px;
+          }
         }
       }
     }
-    .vms {
-      position: absolute;
-      left: 19px;
-      top: -17px;
-      .vm {
-        display: inline-block;
-        @include setimg("vm", 33, 37);
-        color: $gray;
-        &.second {
-          margin-right: 36px;
-          margin-left: 6px;
-        }
-        &.last {
-          margin-left: 6px;
-          margin-right: 0px;
-        }
-        p {
-          margin-top: 14px;
-          font-size: 10px;
-          width: 100%;
-          text-align: center;
-        }
-      }
+    .db {
+      @include setimg("db", 145, 92);
+      margin-top: 20px;
+      margin-left: 198px;
     }
     .label {
-      @include setimg("hypervisor", 86, 30);
       position: absolute;
-      left: 125px;
-      bottom: -11px;
-    }
-  }
-  .servers {
-    margin-top: 30px;
-    .server {
-      display: inline-block;
-      margin-left: 5px;
-      margin-right: 35px;
-      .rack {
-        @include setimg("rack-server", 148, 35);
+      font-size: 10.5pt;
+      text-align: right;
+      line-height: 13pt;
+      &.top {
+        top: 100px;
+        left: 8px;
       }
-      .storage {
-        margin-top: 13px;
-        margin-left: 10px;
-        .ram {
-          @include setimg("ram", 32, 12);
-          display: inline-block;
-          margin-top: 10px;
-        }
-        .pci {
-          @include setimg("pci", 43, 33);
-          display: inline-block;
-          margin-left: 10px;
-        }
-        .ssd {
-          @include setimg("ssd", 26, 19);
-          display: inline-block;
-          margin-left: 10px;
-          margin-top: 6px;
-        }
+      &.middle {
+        top: 195px;
+        left: 10px;
+      }
+      &.bottom {
+        color: $gray;
+        top: 412px;
+        left: 127px;
       }
     }
   }
-  .db {
-    @include setimg("db", 145, 92);
-    margin-top: 20px;
-    margin-left: 198px;
-  }
-  .label {
+  .right {
     position: absolute;
-    font-size: 10.5pt;
-    text-align: right;
-    line-height: 13pt;
-    &.top {
-      top: 100px;
-      left: 8px;
-    }
-    &.middle {
-      top: 195px;
-      left: 10px;
-    }
-    &.bottom {
-      color: $gray;
-      top: 412px;
-      left: 127px;
+    left: 510px;
+    top: 40px;
+    width: 513px;
+    height: 400px;
+    background-color: white;
+    hr {
+      display: block;
+      border: none;
+      @include setimg("rule-line", 513, 5);
     }
   }
 }
+
 
