@@ -62,24 +62,24 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/public\/homepage-module\/images\/pci-card.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 11210,
-		"inputAbbreviatedPath": "\/public\/homepage-module\/images\/pci-card.png",
-		"outputAbbreviatedPath": "\/public\/homepage-module\/images\/pci-card.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/public\/homepage-module\/images\/pci-ssd.png": {
+	"\/public\/homepage-module\/images\/pci.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 4553,
-		"inputAbbreviatedPath": "\/public\/homepage-module\/images\/pci-ssd.png",
-		"outputAbbreviatedPath": "\/public\/homepage-module\/images\/pci-ssd.png",
+		"inputAbbreviatedPath": "\/public\/homepage-module\/images\/pci.png",
+		"outputAbbreviatedPath": "\/public\/homepage-module\/images\/pci.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/homepage-module\/images\/rack-server.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11210,
+		"inputAbbreviatedPath": "\/public\/homepage-module\/images\/rack-server.png",
+		"outputAbbreviatedPath": "\/public\/homepage-module\/images\/rack-server.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

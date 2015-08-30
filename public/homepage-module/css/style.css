@@ -3,7 +3,7 @@
 
 #feature {
   width: 1024px;
-  height: 450px;
+  height: 550px;
   position: relative;
   overflow: hidden;
   color: #AB2127;
@@ -14,31 +14,34 @@
     vertical-align: top;
     overflow: visible; }
   #feature .hypervisor {
-    position: absolute;
-    left: 100px;
-    top: 100px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 70px;
     width: 341px;
     height: 196px;
     background-image: url(../images/background.png);
     background-size: 341px 196px; }
     #feature .hypervisor .hotspot {
       position: relative;
-      font-size: 30pt;
+      font-size: 25pt;
+      font-weight: 600;
       text-align: center; }
+      #feature .hypervisor .hotspot p {
+        padding-top: 25px; }
       #feature .hypervisor .hotspot.top {
         left: 6px;
         top: 8px;
         width: 329px;
         height: 85px; }
-      #feature .hypervisor .hotspot.selected {
-        width: 329px;
-        height: 85px;
-        background-image: url(../images/scribble-1.png);
-        background-size: 329px 85px;
-        color: white; }
+        #feature .hypervisor .hotspot.top.selected {
+          width: 329px;
+          height: 85px;
+          background-image: url(../images/scribble-1.png);
+          background-size: 329px 85px;
+          color: white; }
       #feature .hypervisor .hotspot.bottom {
         left: 4px;
-        top: 15px;
+        top: 14px;
         width: 332px;
         height: 89px; }
         #feature .hypervisor .hotspot.bottom.selected {
@@ -47,12 +50,10 @@
           background-image: url(../images/scribble-2.png);
           background-size: 332px 89px;
           color: white; }
-      #feature .hypervisor .hotspot p {
-        padding-top: 22px; }
     #feature .hypervisor .vms {
       position: absolute;
-      left: 35px;
-      top: -16px; }
+      left: 19px;
+      top: -17px; }
       #feature .hypervisor .vms .vm {
         display: inline-block;
         width: 33px;
@@ -60,8 +61,10 @@
         background-image: url(../images/vm.png);
         background-size: 33px 37px; }
         #feature .hypervisor .vms .vm.second {
-          margin-right: 30px; }
+          margin-right: 36px;
+          margin-left: 6px; }
         #feature .hypervisor .vms .vm.last {
+          margin-left: 6px;
           margin-right: 0px; }
         #feature .hypervisor .vms .vm p {
           margin-top: 14px;
@@ -76,3 +79,39 @@
       position: absolute;
       left: 125px;
       bottom: -11px; }
+  #feature .servers {
+    margin-top: 30px; }
+    #feature .servers .server {
+      display: inline-block;
+      margin-left: 5px;
+      margin-right: 35px; }
+      #feature .servers .server .rack {
+        width: 148px;
+        height: 35px;
+        background-image: url(../images/rack-server.png);
+        background-size: 148px 35px; }
+      #feature .servers .server .storage {
+        margin-top: 13px;
+        margin-left: 10px; }
+        #feature .servers .server .storage .ram {
+          width: 32px;
+          height: 12px;
+          background-image: url(../images/ram.png);
+          background-size: 32px 12px;
+          display: inline-block;
+          margin-top: 10px; }
+        #feature .servers .server .storage .pci {
+          width: 43px;
+          height: 33px;
+          background-image: url(../images/pci.png);
+          background-size: 43px 33px;
+          display: inline-block;
+          margin-left: 10px; }
+        #feature .servers .server .storage .ssd {
+          width: 26px;
+          height: 19px;
+          background-image: url(../images/ssd.png);
+          background-size: 26px 19px;
+          display: inline-block;
+          margin-left: 10px;
+          margin-top: 6px; }

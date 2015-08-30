@@ -27,7 +27,7 @@ function init() {
       selectSection(1);
     },
     function () {
-      selectSection(1);
+      selectSection(0);
     }
   );
   $(".hypervisor > div.bottom.hotspot").click(function() {
