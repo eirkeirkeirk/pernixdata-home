@@ -17,7 +17,20 @@ function selectSection(id) {
   }
 }
 
-function init() {
+function configureTabArea() {
+  $("ul.feature-tabs li").click(function() {
+    if (!$(this).hasClass("active")) {
+      var tabNum = $(this).index();
+      var nthChild = tabNum + 1;
+      $("ul.feature-tabs li.active").removeClass("active");
+      $(this).addClass("active");
+      $("ul.feature-tab li.active").removeClass("active");
+      $("ul.feature-tab li:nth-child(" + nthChild + ")").addClass("active");
+    }
+  });
+}
+
+function configureButtons() {
   $(".hypervisor > div.top.hotspot").click(function() {
     selectSection(1);
     return false;
@@ -44,8 +57,11 @@ function init() {
   );
 }
 
+function init() {
+  configureTabArea();
+  configureButtons();
+}
+
 ($(function () {
-  $(window).load(function() {
-    init();
-  });
+  init();
 }));

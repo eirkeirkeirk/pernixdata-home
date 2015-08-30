@@ -98,11 +98,11 @@ $image-path: "../images/";
     }
     .servers {
       margin-top: 30px;
-      margin-left: 10px;
+      margin-left: 25px;
       .server {
         display: inline-block;
-        margin-left: 5px;
-        margin-right: 20px;
+        margin-left: 2px;
+        margin-right: 15px;
         .rack {
           @include setimg("rack-server", 148, 35);
         }
@@ -155,15 +155,54 @@ $image-path: "../images/";
   }
   .right {
     position: absolute;
-    left: 510px;
+    left: 524px;
     top: 40px;
-    width: 513px;
-    height: 400px;
-    background-color: white;
+    width: 500px;
+    font-size: 12pt;
+    ul.feature-tabs {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        padding: 5px 20px;
+        margin-bottom: 4px;
+        color: #000;
+        cursor: pointer;
+        &.active {
+          color: $text-red;
+        }
+      }
+    }
+    ul.feature-tab {
+      height: 300px;
+      color: black;
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+      li {
+        display: none;
+        p {
+          padding: 0px 15px;
+          line-height: 1.5;
+          margin-bottom: 10px; 
+        }
+        h2 {
+          text-align: center;
+          color: $text-red;
+          font-size: 14.5pt;
+          text-transform: uppercase;
+          margin: 36px 0px;
+        }
+        &.active {
+          display: block;
+        }
+      }
+    }
     hr {
       display: block;
       border: none;
-      @include setimg("rule-line", 513, 5);
+      @include setimg("rule-line", 500, 5);
     }
   }
 }
