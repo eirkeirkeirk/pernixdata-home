@@ -1,0 +1,63 @@
+$text-red: #AB2127;
+$proxima-nova: proxima-nova, Helvetica, Arial, sans-serif;
+
+#feature {
+  width: 1024px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  color: $text-red;
+  font-family: $proxima-nova;
+  font-size: 9pt;
+  font-weight: 600;
+  .left {
+    position: absolute;
+    .bottomrow {
+      position: absolute;
+      top: 200px;
+      .server {
+        position: absolute;
+        width: 400px;
+        &.left {
+        }
+        &.middle {
+          left: 190px;
+        }
+        &.right {
+          left: 380px;
+        }
+        .pci {
+          position: absolute;
+          width: 148px;
+          height: 35px;
+          content: url("../images/pci-card.png");
+        }
+        .ram {
+          position: absolute;
+          width: 32px;
+          height: 12px;
+          top: 50px;
+          left: 10px;
+          content: url("../images/ram.png");
+        }
+        .pci-ssd {
+          position: absolute;
+          width: 43px;
+          height: 33px;
+          top: 40px;
+          left: 55px;
+          content: url("../images/pci-ssd.png");
+        }
+        .ssd {
+          position: absolute;
+          width: 26px;
+          height: 19px;
+          top: 45px;
+          left: 114px;
+          content: url("../images/ssd.png");
+        }      
+      }
+    }
+  }
+}
+

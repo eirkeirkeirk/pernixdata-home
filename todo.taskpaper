@@ -1,0 +1,5 @@
+inbox:
+	- create barebones template
+		simple html with a div centered in the page
+		add a spacer div above it
+		save the template (HTML, CSS, JS) to Planter
