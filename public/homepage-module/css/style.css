@@ -26,8 +26,6 @@
       font-size: 25pt;
       font-weight: 600;
       text-align: center; }
-      #feature .hypervisor .hotspot p {
-        padding-top: 25px; }
       #feature .hypervisor .hotspot.top {
         left: 6px;
         top: 8px;
@@ -39,6 +37,8 @@
           background-image: url(../images/scribble-1.png);
           background-size: 329px 85px;
           color: white; }
+        #feature .hypervisor .hotspot.top p {
+          padding-top: 30px; }
       #feature .hypervisor .hotspot.bottom {
         left: 4px;
         top: 14px;
@@ -50,6 +50,8 @@
           background-image: url(../images/scribble-2.png);
           background-size: 332px 89px;
           color: white; }
+        #feature .hypervisor .hotspot.bottom p {
+          padding-top: 25px; }
     #feature .hypervisor .vms {
       position: absolute;
       left: 19px;
@@ -59,7 +61,8 @@
         width: 33px;
         height: 37px;
         background-image: url(../images/vm.png);
-        background-size: 33px 37px; }
+        background-size: 33px 37px;
+        color: #405060; }
         #feature .hypervisor .vms .vm.second {
           margin-right: 36px;
           margin-left: 6px; }
@@ -115,3 +118,25 @@
           display: inline-block;
           margin-left: 10px;
           margin-top: 6px; }
+  #feature .db {
+    width: 145px;
+    height: 92px;
+    background-image: url(../images/db.png);
+    background-size: 145px 92px;
+    margin-top: 20px;
+    margin-left: 198px; }
+  #feature .label {
+    position: absolute;
+    font-size: 10.5pt;
+    text-align: right;
+    line-height: 13pt; }
+    #feature .label.top {
+      top: 100px;
+      left: 8px; }
+    #feature .label.middle {
+      top: 195px;
+      left: 10px; }
+    #feature .label.bottom {
+      color: #405060;
+      top: 412px;
+      left: 127px; }

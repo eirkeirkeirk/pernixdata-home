@@ -1,4 +1,5 @@
 $text-red: #AB2127;
+$gray: #405060;
 $proxima-nova: proxima-nova, Helvetica, Arial, sans-serif;
 $image-path: "../images/";
 @mixin setimg($img, $w, $h) {
@@ -35,9 +36,6 @@ $image-path: "../images/";
       font-size: 25pt;
       font-weight: 600;
       text-align: center;
-      p {
-        padding-top: 25px;
-      }
       &.top {
         left: 6px;
         top: 8px;
@@ -46,6 +44,9 @@ $image-path: "../images/";
         &.selected {
           @include setimg("scribble-1", 329, 85);
           color: white;
+        }
+        p {
+          padding-top: 30px;
         }
       }
       &.bottom {
@@ -57,6 +58,9 @@ $image-path: "../images/";
           @include setimg("scribble-2", 332, 89);
           color: white;
         }
+        p {
+          padding-top: 25px;
+        }
       }
     }
     .vms {
@@ -66,6 +70,7 @@ $image-path: "../images/";
       .vm {
         display: inline-block;
         @include setimg("vm", 33, 37);
+        color: $gray;
         &.second {
           margin-right: 36px;
           margin-left: 6px;
@@ -118,6 +123,30 @@ $image-path: "../images/";
           margin-top: 6px;
         }
       }
+    }
+  }
+  .db {
+    @include setimg("db", 145, 92);
+    margin-top: 20px;
+    margin-left: 198px;
+  }
+  .label {
+    position: absolute;
+    font-size: 10.5pt;
+    text-align: right;
+    line-height: 13pt;
+    &.top {
+      top: 100px;
+      left: 8px;
+    }
+    &.middle {
+      top: 195px;
+      left: 10px;
+    }
+    &.bottom {
+      color: $gray;
+      top: 412px;
+      left: 127px;
     }
   }
 }
