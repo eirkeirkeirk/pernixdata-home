@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>PernixData</title>
   <link rel="stylesheet" href="homepage-module/css/proxima-nova.css" type="text/css">
+	<link rel="stylesheet" href="homepage-module/css/reset.css" type="text/css">
 	<link rel="stylesheet" href="homepage-module/css/style.css" type="text/css">
   <style>
   body {
@@ -42,59 +43,30 @@
 </script>
  
 <div class="spacer"></div>
-<div id="trigger1"></div>
 <div id="feature">
-  <div class="left">
-    <div class="top">
-      
-    </div>
-    <div class="bottomrow">
-      <div class="server left">
-        <img class="pci" />
-        <img class="ram" />
-        <img class="pci-ssd" />
-        <img class="ssd" />
-        <!-- <div class="ssd" /> -->
-      </div>
-      <div class="server middle">
-        <img class="pci" />
-        <img class="ram" />
-        <img class="pci-ssd" />
-        <img class="ssd" />
-        <!-- <div class="ssd" /> -->
-      </div>
-      <div class="server right">
-        <img class="pci" />
-        <img class="ram" />
-        <img class="pci-ssd" />
-        <img class="ssd" />
-        <!-- <div class="ssd" /> -->
-      </div>
-      
-    </div>
+  <div class="hypervisor">
+    <div class="hotspot top"><p>Architect</p></div>
+    <div class="hotspot bottom"><p>FVP</p></div>
     
+    <div class="vms">
+      <div class="vm"><p>VM</p></div>
+      <div class="vm second"><p>VM</p></div>
+      <div class="vm"><p>VM</p></div>
+      <div class="vm second"><p>VM</p></div>
+      <div class="vm"><p>VM</p></div>
+      <div class="vm last"><p>VM</p></div>
+    </div>
+    <div class="label"></div>
   </div>
 </div>
 <div class="spacer"></div>
 <script>
-var tween = TweenMax.to(".bottomrow", 1, {scale: 2, ease: Linear.easeNone, onComplete: function (e) {
-  scene.removeTween(false);
-}});
-// var tween = TweenMax.from(".bottomrow", 2, {autoAlpha: 0, ease: Linear.easeNone});
-
-var scene = new ScrollMagic.Scene({triggerElement: "#feature", offset: -window.innerHeight / 2})
-.setTween(tween) // trigger a TweenMax.to tween
-// .setTween(".bottomrow", 2, {left: 500}) // trigger a TweenMax.to tween
-.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-// .removeTween(true)
-.addTo(controller);
-window.onload = function (e) {
-  scene.offset(-window.innerHeight / 4);
-}
-window.onresize = function (e) {
-  console.log(window.innerHeight);
-  scene.offset(-window.innerHeight / 4);
-}
+// var tween = TweenMax.from("#feature", 0.2, {autoAlpha: 0, ease: Linear.easeNone});
+//
+// var scene = new ScrollMagic.Scene({triggerElement: "#feature"})
+// .setTween(tween) // trigger a TweenMax.to tween
+// .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+// .addTo(controller);
 </script>
   
 </body>

@@ -1,3 +1,6 @@
+.debug {
+  background-color: #0F0; }
+
 #feature {
   width: 1024px;
   height: 450px;
@@ -7,41 +10,59 @@
   font-family: proxima-nova, Helvetica, Arial, sans-serif;
   font-size: 9pt;
   font-weight: 600; }
-  #feature .left {
-    position: absolute; }
-    #feature .left .bottomrow {
+  #feature div {
+    vertical-align: top;
+    overflow: visible; }
+  #feature .hypervisor {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 341px;
+    height: 196px;
+    background-image: url(../images/background.png);
+    background-size: 341px 196px; }
+    #feature .hypervisor .hotspot {
+      position: relative;
+      font-size: 30pt;
+      color: white; }
+      #feature .hypervisor .hotspot.top {
+        left: 6px;
+        top: 8px;
+        width: 329px;
+        height: 85px;
+        background-image: url(../images/scribble-1.png);
+        background-size: 329px 85px; }
+      #feature .hypervisor .hotspot.bottom {
+        left: 4px;
+        top: 15px;
+        width: 332px;
+        height: 89px;
+        background-image: url(../images/scribble-2.png);
+        background-size: 332px 89px; }
+    #feature .hypervisor .vms {
       position: absolute;
-      top: 200px; }
-      #feature .left .bottomrow .server {
-        position: absolute;
-        width: 400px; }
-        #feature .left .bottomrow .server.middle {
-          left: 190px; }
-        #feature .left .bottomrow .server.right {
-          left: 380px; }
-        #feature .left .bottomrow .server .pci {
-          position: absolute;
-          width: 148px;
-          height: 35px;
-          content: url("../images/pci-card.png"); }
-        #feature .left .bottomrow .server .ram {
-          position: absolute;
-          width: 32px;
-          height: 12px;
-          top: 50px;
-          left: 10px;
-          content: url("../images/ram.png"); }
-        #feature .left .bottomrow .server .pci-ssd {
-          position: absolute;
-          width: 43px;
-          height: 33px;
-          top: 40px;
-          left: 55px;
-          content: url("../images/pci-ssd.png"); }
-        #feature .left .bottomrow .server .ssd {
-          position: absolute;
-          width: 26px;
-          height: 19px;
-          top: 45px;
-          left: 114px;
-          content: url("../images/ssd.png"); }
+      left: 35px;
+      top: -16px; }
+      #feature .hypervisor .vms .vm {
+        display: inline-block;
+        width: 33px;
+        height: 37px;
+        background-image: url(../images/vm.png);
+        background-size: 33px 37px; }
+        #feature .hypervisor .vms .vm.second {
+          margin-right: 30px; }
+        #feature .hypervisor .vms .vm.last {
+          margin-right: 0px; }
+        #feature .hypervisor .vms .vm p {
+          margin-top: 14px;
+          font-size: 10px;
+          width: 100%;
+          text-align: center; }
+    #feature .hypervisor .label {
+      width: 86px;
+      height: 30px;
+      background-image: url(../images/hypervisor.png);
+      background-size: 86px 30px;
+      position: absolute;
+      left: 125px;
+      bottom: -11px; }
