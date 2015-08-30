@@ -24,21 +24,31 @@
     #feature .hypervisor .hotspot {
       position: relative;
       font-size: 30pt;
-      color: white; }
+      text-align: center; }
       #feature .hypervisor .hotspot.top {
         left: 6px;
         top: 8px;
         width: 329px;
+        height: 85px; }
+      #feature .hypervisor .hotspot.selected {
+        width: 329px;
         height: 85px;
         background-image: url(../images/scribble-1.png);
-        background-size: 329px 85px; }
+        background-size: 329px 85px;
+        color: white; }
       #feature .hypervisor .hotspot.bottom {
         left: 4px;
         top: 15px;
         width: 332px;
-        height: 89px;
-        background-image: url(../images/scribble-2.png);
-        background-size: 332px 89px; }
+        height: 89px; }
+        #feature .hypervisor .hotspot.bottom.selected {
+          width: 332px;
+          height: 89px;
+          background-image: url(../images/scribble-2.png);
+          background-size: 332px 89px;
+          color: white; }
+      #feature .hypervisor .hotspot p {
+        padding-top: 22px; }
     #feature .hypervisor .vms {
       position: absolute;
       left: 35px;

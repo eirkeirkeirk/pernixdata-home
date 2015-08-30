@@ -33,16 +33,29 @@ $image-path: "../images/";
     .hotspot {
       position: relative;
       font-size: 30pt;
-      color: white;
+      text-align: center;
       &.top {
         left: 6px;
         top: 8px;
+        width: 329px;
+        height: 85px;
+      }
+      &.selected {
         @include setimg("scribble-1", 329, 85);
+        color: white;
       }
       &.bottom {
         left: 4px;
         top: 15px;
-        @include setimg("scribble-2", 332, 89);
+        width: 332px;
+        height: 89px;
+        &.selected {
+          @include setimg("scribble-2", 332, 89);
+          color: white;
+        } 
+      }
+      p {
+        padding-top: 22px;
       }
     }
     .vms {
