@@ -7,7 +7,6 @@
   function selectSection(id, automatic) {
     // If this was triggered by user action, not the interval, cancel the interval
     if (!automatic) {
-      console.log("triggered by a human!");
       clearInterval(intervalID);
     }
     if (id === activeSection) {
@@ -77,23 +76,17 @@
     drawInTimeline.staggerFrom("#feature .right hr", 1.5, {autoAlpha: 0}, 0.2, "-=2");
     drawInTimeline.from("#feature .right .feature-tab", 1.5, {autoAlpha: 0}, "-=1.5");
     drawInTimeline.addCallback(startAutoplay, "start+=2");
+    
   	var controller = new ScrollMagic.Controller();
     
-    var scene = new ScrollMagic.Scene({triggerElement: "#feature"})
-    // .on("start", function () {
-      // console.log("scene started");
-      // drawInTimeline.play();
-      // startAutoplay();
-    // })
+    var scene = new ScrollMagic.Scene({triggerElement: "#feature", triggerHook: 0.8})
     .reverse(false)
     .setTween(drawInTimeline) // trigger a TweenMax.to tween
     // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-    // .offset(-window.innerHeight / 4)
     .addTo(controller);
   }
 
   function startAutoplay() {
-    console.log(">> start autoplay <<");
     intervalID = setInterval(function () {
       console.log("autoplay fired");
       var newSection = activeSection + 1 > 2 ? 0 : activeSection + 1;
