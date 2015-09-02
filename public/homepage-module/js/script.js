@@ -1,7 +1,7 @@
 (function() {
   var activeSection = 0;
   var intervalID = null;
-  var intervalDelay = 6000;
+  var intervalDelay = 10000;
   var drawInTimeline = new TimelineMax();
 
   function selectSection(id, automatic) {
@@ -57,9 +57,6 @@
     );
   }
 
-  /*
-    TODO make this two different timelines, one for the left and one for the right so that I can start the right one at a certain time irrespective of what's going on with the left one.
-  */
   function setUpScrollAnimation() {
     TweenLite.defaultEase = Strong.easeInOut;
     drawInTimeline.add("start");
@@ -69,9 +66,9 @@
     drawInTimeline.from("#feature .hypervisor .label", 0.5, {scale: 0.0, autoAlpha: 0}, "start+=1");
     drawInTimeline.staggerFrom("#feature .servers .server", 1.5, {top: "+=50", autoAlpha: 0}, 0.25, "-=1.5");
     drawInTimeline.from("#feature .db", 1.5, {autoAlpha: 0}, "-=1.5");
-    drawInTimeline.from("#feature .label.bottom", 1.5, {autoAlpha: 0, left: "-=50"}, "-=1.5");
+    drawInTimeline.from("#feature .label.top", 1.5, {autoAlpha: 0, left: "-=50"}, "-=1.5");
     drawInTimeline.from("#feature .label.middle", 1.5, {autoAlpha: 0, left: "-=50"}, "-=1");
-    drawInTimeline.from("#feature .label.top", 1.5, {autoAlpha: 0, left: "-=50"}, "-=1");
+    drawInTimeline.from("#feature .label.bottom", 1.5, {autoAlpha: 0, left: "-=50"}, "-=1");
     drawInTimeline.staggerFrom("#feature .feature-tabs li", 1.5, {autoAlpha: 0}, 0.2, "-=2");
     drawInTimeline.staggerFrom("#feature .right hr", 1.5, {autoAlpha: 0}, 0.2, "-=2");
     drawInTimeline.from("#feature .right .feature-tab", 1.5, {autoAlpha: 0}, "-=1.5");
@@ -81,8 +78,7 @@
     
     var scene = new ScrollMagic.Scene({triggerElement: "#feature", triggerHook: 0.8})
     .reverse(false)
-    .setTween(drawInTimeline) // trigger a TweenMax.to tween
-    // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+    .setTween(drawInTimeline)
     .addTo(controller);
   }
 
