@@ -3,20 +3,35 @@
   var intervalID = null;
   var intervalDelay = 10000;
   var drawInTimeline = new TimelineMax();
+  var isAnimating = false;
 
   function selectSection(id, automatic) {
     // If this was triggered by user action, not the interval, cancel the interval
     if (!automatic) {
       clearInterval(intervalID);
     }
-    if (id === activeSection) {
+    if (id === activeSection || isAnimating) {
       return;
     }
-    activeSection = id;
-    $("ul.feature-tabs li.active").removeClass("active");
-    $("ul.feature-tabs li:nth-child(" + (id + 1) + ")").addClass("active");
-    $("ul.feature-tab li.active").removeClass("active");
-    $("ul.feature-tab li:nth-child(" + (id + 1) + ")").addClass("active");
+    isAnimating = true;
+    // tween out the active section
+    var $oldActiveTab = $("ul.feature-tabs li.active");
+    var $oldActiveContent = $("ul.feature-tab li.active");
+    var $newActiveTab = $("ul.feature-tabs li:nth-child(" + (id + 1) + ")");
+    var $newActiveContent = $("ul.feature-tab li:nth-child(" + (id + 1) + ")");
+    $oldActiveTab.removeClass("active"); // fade current active tab button to black
+    var tl = new TimelineMax();
+    tl.to($oldActiveContent, 0.5, {autoAlpha:0, ease:Cubic.easeOut, onComplete: function () {
+      $oldActiveContent.removeClass("active"); // removes the old active content from the flow
+      $newActiveTab.addClass("active"); // fade new active tab button to red
+      TweenMax.set($newActiveContent, {autoAlpha:0});
+      $newActiveContent.addClass("active");
+    }});
+    // tween in the target section
+    tl.to($newActiveContent, 0.5, {autoAlpha:1, ease:Cubic.easeIn, onComplete: function () {
+      isAnimating = false;
+      activeSection = id;
+    }});
     $(".hypervisor > div.hotspot.selected").removeClass("selected");
     $(".hypervisor > div.hotspot:nth-child(" + id + ")").addClass("selected");
   }
@@ -73,9 +88,10 @@
     drawInTimeline.staggerFrom("#feature .right hr", 1.5, {autoAlpha: 0}, 0.2, "-=2");
     drawInTimeline.from("#feature .right .feature-tab", 1.5, {autoAlpha: 0}, "-=1.5");
     drawInTimeline.addCallback(startAutoplay, "start+=2");
-    
-  	var controller = new ScrollMagic.Controller();
-    
+    drawInTimeline.addCallback(function () {console.log("finished draw-in");isAnimating = false;});
+
+    var controller = new ScrollMagic.Controller();
+
     var scene = new ScrollMagic.Scene({triggerElement: "#feature", triggerHook: 0.8})
     .reverse(false)
     .setTween(drawInTimeline)
@@ -92,7 +108,7 @@
 
   function init() {
     configureButtons();
-    setUpScrollAnimation();
+    // setUpScrollAnimation();
   }
 
   ($(function () {

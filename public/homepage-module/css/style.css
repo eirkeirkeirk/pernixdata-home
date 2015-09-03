@@ -154,6 +154,8 @@
       padding: 0;
       text-align: center; }
       #feature .right ul.feature-tabs li {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
         display: inline-block;
         padding: 5px 20px;
         margin-bottom: 4px;
