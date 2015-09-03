@@ -108,7 +108,7 @@
 
   function init() {
     configureButtons();
-    // setUpScrollAnimation();
+    setUpScrollAnimation();
   }
 
   ($(function () {
